@@ -1,0 +1,46 @@
+// out: ../css/main.css
+// main: main.less
+
+@import "colors";
+@import "misc";
+
+@font-face {
+    font-family: OpenSans;
+    src: url(../misc/OpenSans-Regular.ttf);
+}
+
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  background-color: @grey;
+  color: white;
+  min-height: 100%;
+  position: relative;
+  min-width: 320px;
+  font-family: OpenSans, verdana, sans-serif;
+}
+.topbar {
+  background-color: black;
+  color: @green;
+  height: 65px;
+  padding:10px;
+}
+
+.content {
+  padding:10px;
+  padding-bottom:60px;   /* Height of the footer */
+}
+
+.title {
+  font-size: 3em;
+}
+
+#footer {
+  background-color: black;
+  position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+}
