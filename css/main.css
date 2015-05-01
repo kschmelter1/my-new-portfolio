@@ -11,28 +11,305 @@ body {
   color: white;
   min-height: 100%;
   position: relative;
-  min-width: 320px;
   font-family: OpenSans, verdana, sans-serif;
+  font-size: 100%;
+  min-width: 310px;
+}
+.topbarbox {
+  z-index: 100;
+  position: fixed;
+  height: 67px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0px 0px 5px 2px #8dc63f;
+  -webkit-box-shadow: 0px 0px 5px 2px #8dc63f;
+  -moz-box-shadow: 0px 0px 5px 2px #8dc63f;
+  transition: all 300ms;
 }
 .topbar {
-  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
   color: #8dc63f;
-  height: 65px;
-  padding: 10px;
+  height: 67px;
+  transition: all 300ms;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.3);
+  background: black;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(black));
+  background: -moz-linear-gradient(top, #3c3c3c, black);
+  border-top: 2px solid black;
+}
+#logo {
+  float: left;
+}
+#logo img {
+  display: inline-block;
+  margin-top: 0.4em;
+  margin-bottom: 0.1em;
+  margin-left: 0.76em;
+  width: 3em;
+}
+#burgerbox {
+  display: inline-block;
+  cursor: pointer;
+  float: right;
+  margin-right: 0.4em;
+  color: #8dc63f;
+  font-size: 2.5em;
+  transition: all 500ms ease-in-out;
+}
+#burgerbox:hover {
+  color: #eaeaea;
+}
+#burgerbox.active {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+}
+.navmenu {
+  display: none;
+}
+.socialmenu {
+  display: none;
+}
+.dropdown {
+  position: absolute;
+  top: -150px;
+  right: 0;
+  transition: all 500ms ease-in-out;
+}
+.dropdown li {
+  background: -webkit-gradient(radial, 50% 100%, 10, 50% 50%, 90, from(#8dc63f), to(#3c3c3c));
+  background: -moz-radial-gradient(center 80px 45deg, circle cover, #8dc63f 0%, #3c3c3c 100%);
+}
+.dropdown a {
+  display: block;
+  height: 47px;
+  width: 136px;
+  background-color: #3c3c3c;
+  padding-top: 5px;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.7);
+  color: #eaeaea;
+}
+.dropdown a:hover {
+  background: transparent none;
+  color: white;
+}
+.dropdown.active {
+  top: 50px;
+  right: 0;
 }
 .content {
-  padding: 10px;
-  padding-bottom: 60px;
+  padding-top: 67px;
+  padding-bottom: 3em;
   /* Height of the footer */
+  height: 1500px;
+}
+.topbox {
+  margin-top: 20%;
+  position: relative;
+  width: 100%;
+  height: 10em;
+  overflow: hidden;
+  background-image: url('../images/androidpron.jpg');
+  background-position: right 0px bottom 500px;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: 0px 0px 5px 2px black;
+  -webkit-box-shadow: 0px 0px 5px 2px #3c3c3c;
+}
+.topbox img {
+  width: 100%;
+  height: auto;
+}
+.imagebox {
+  width: 100%;
+  position: relative;
+}
+.titlebox {
+  position: absolute;
+  top: 37%;
+  left: 0;
+  width: 100%;
+  height: 3em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.actualtitle {
+  height: 100%;
+  margin-top: -0.3em;
+}
+.actualtitle p {
+  font-size: 0.6em;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 0.6em;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.7);
+  color: #eaeaea;
 }
 .title {
-  font-size: 3em;
+  font-size: 2em;
+  line-height: 2em;
+  vertical-align: middle;
 }
 #footer {
-  background-color: black;
   position: absolute;
+  overflow: hidden;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 3em;
   /* Height of the footer */
+  text-align: center;
+  font-size: 0.75em;
+  line-height: 0.75em;
+  color: #eaeaea;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(black));
+  background: -moz-linear-gradient(top, #3c3c3c, black);
+  border-top: 2px solid black;
+  border-top: 3px solid rgba(0, 0, 0, 0.3);
+}
+#footer p {
+  transition: all 400ms ease-in;
+}
+.socialmenu2 {
+  position: absolute;
+  bottom: -6px;
+  right: 10px;
+}
+.socialmenu2 li {
+  display: inline-block;
+  margin-left: 3px;
+}
+.socialmenu2 img {
+  height: 2em;
+}
+@media screen and (max-width: 379px) {
+  #footer p {
+    margin-right: 150px;
+  }
+}
+@media screen and (min-width: 727px) {
+  #burgerbox {
+    display: none;
+  }
+  .topbar {
+    height: 87px;
+    text-align: center;
+  }
+  .topbarbox {
+    height: 87px;
+  }
+  .content {
+    padding-top: 87px;
+  }
+  #logo {
+    position: absolute;
+    top: 1px;
+    left: 5px;
+  }
+  #logo img {
+    width: 4.2em;
+  }
+  .navmenu {
+    display: inline-block;
+    margin-right: 46px;
+    transition: all 800ms ease-in;
+  }
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .navmenu li {
+    display: inline-block;
+    height: 81px;
+    line-height: 81px;
+    text-align: center;
+    background: -webkit-gradient(radial, 50% 100%, 10, 50% 50%, 90, from(#8dc63f), to(#3c3c3c));
+    background: -moz-radial-gradient(center 80px 45deg, circle cover, #8dc63f 0%, #3c3c3c 100%);
+  }
+  .navmenu a {
+    display: block;
+    padding: 0 20px;
+    color: #eaeaea;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.7);
+    font-size: 1.2em;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    background: #3c3c3c;
+    transition: all 700ms ease-in-out;
+  }
+  .navmenu a:hover {
+    transition: all 700ms ease-in-out;
+    background: transparent none;
+    color: white;
+  }
+  .socialmenu {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    display: block;
+  }
+  .socialmenu ul {
+    display: inline-block;
+  }
+  .socialmenu li {
+    display: inline-block;
+    margin-left: 5px;
+  }
+  .socialmenu2 {
+    display: none;
+  }
+  .topbox {
+    margin-top: 15%;
+    height: 16em;
+    transition: all 500ms ease-in-out;
+  }
+  .titlebox {
+    height: 4.5em;
+    transition: all 500ms ease-in-out;
+  }
+  .actualtitle {
+    margin-top: -2.2em;
+    transition: all 500ms ease-in-out;
+  }
+  .actualtitle p {
+    font-size: 1.5em;
+    transition: all 500ms ease-in-out;
+  }
+}
+@media screen and (min-width: 900px) {
+  .navmenu {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 910px) {
+  .topbox img {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .topbox {
+    height: 27em;
+  }
+  .titlebox {
+    height: 6em;
+  }
+  .actualtitle {
+    margin-top: -4.6em;
+  }
+  .actualtitle p {
+    font-size: 2.5em;
+  }
 }
